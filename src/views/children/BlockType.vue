@@ -44,9 +44,16 @@ const translate = computed(() => {
         }
       })
 
+    case 'HOMEPAGE_BANNER':
+      console.log(props.data.extInfo.banners)
+
+      return props.data.extInfo.banners.map((item) => {
+        return {
+          img: item.pic
+        }
+      })
     default:
       return []
   }
 })
-console.log(blockTypeMap[props.data.blockCode])
 </script>
