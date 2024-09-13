@@ -53,17 +53,17 @@ const translate = computed(() => {
         }
       })
     case 'HOMEPAGE_BLOCK_PLAYLIST_RCMD':
-      console.log(props.data.creatives[0])
+      console.log(props.data.creatives)
       return {
-        name: props.data.uiElement.subTitle.title
-        // children: props.data.creatives[0].map((item) => {
-        //   return {
-        //     id: item.resources[2].resourceId,
-        //     playCount: item.resources[2].resourceExtInfo.playCount,
-        //     imageUrl: item.resources[2].uiElement.image.imageUrl,
-        //     title: item.resources[2].uiElement.mainTitle.title
-        //   }
-        // })
+        name: props.data.uiElement.subTitle.title,
+        children: props.data.creatives.map((item) => {
+          return {
+            id: item.resources[0].resourceId,
+            playCount: item.resources[0].resourceExtInfo.playCount,
+            imageUrl: item.resources[0].uiElement.image.imageUrl,
+            title: item.resources[0].uiElement.mainTitle.title
+          }
+        })
       }
     default:
       return []

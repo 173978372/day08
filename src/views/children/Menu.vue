@@ -1,11 +1,4 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 0">
-    <defs>
-      <filter id="redFilter">
-        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
-      </filter>
-    </defs>
-  </svg>
   <div class="flex" :style="`width:${data.length * 20}vw`">
     <div
       v-for="(item, index) in Props.data"
