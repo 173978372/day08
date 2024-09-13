@@ -31,4 +31,8 @@ const Props = defineProps({
 })
 const emit = defineEmits(['click'])
 </script>
-<style scoped></style>
+<style scoped>
+.filter {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://ww.w3.org/2000/svg'><filter id='colorize'><fecolorMatrix type='matrix' values='1 0 0 0 0.698 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0' /></filter></svg>#colorize");
+}
+</style>

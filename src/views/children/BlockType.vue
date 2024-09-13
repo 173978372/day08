@@ -7,11 +7,11 @@ import { computed, defineProps } from 'vue'
 
 import Menu from './Menu.vue'
 import Banner from './Banner.vue'
-
+import PlayList from './PlayList.vue'
 const blockTypeMap = {
   HOMEPAGE_BANNER: Banner,
   HOMEPAGE_BLOCK_OLD_DRAGON_BALL: Menu,
-  HOMEPAGE_BLOCK_PLAYLIST_RCMD: '',
+  HOMEPAGE_BLOCK_PLAYLIST_RCMD: PlayList,
   HOMEPAGE_BLOCK_STYLE_RCMD: '',
   HOMEPAGE_BLOCK_NEW_ALBUM_NEW_SONG: '',
   HOMEPAGE_BLOCK_HOT_TOPIC: '',
@@ -52,6 +52,19 @@ const translate = computed(() => {
           img: item.pic
         }
       })
+    case 'HOMEPAGE_BLOCK_PLAYLIST_RCMD':
+      console.log(props.data.creatives[0])
+      return {
+        name: props.data.uiElement.subTitle.title
+        // children: props.data.creatives[0].map((item) => {
+        //   return {
+        //     id: item.resources[2].resourceId,
+        //     playCount: item.resources[2].resourceExtInfo.playCount,
+        //     imageUrl: item.resources[2].uiElement.image.imageUrl,
+        //     title: item.resources[2].uiElement.mainTitle.title
+        //   }
+        // })
+      }
     default:
       return []
   }
